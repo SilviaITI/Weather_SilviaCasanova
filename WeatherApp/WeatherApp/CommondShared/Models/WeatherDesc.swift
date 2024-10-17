@@ -9,3 +9,7 @@ import Foundation
 struct WeatherDesc: Codable {
     let value: String?
 }
+
+extension WeatherDesc {
+    static let wethTest = WeatherDesc(value: "Sunny")
+}

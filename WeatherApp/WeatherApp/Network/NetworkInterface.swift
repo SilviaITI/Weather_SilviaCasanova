@@ -1,8 +1,8 @@
 //
 //  NetworkInterface.swift
-//  RickMortyApp
+//  WeatherApp
 //
-//  Created by Silvia Casanova Martinez on 21/8/24.
+//  Created by Silvia Casanova Martinez on 17/10/24.
 //
 
 import SwiftUI
@@ -17,14 +17,14 @@ enum HTTPMethod: String {
 }
 
 enum NetworkInterface {
-    case getWeather(country: String)
+    case getWeather(city: String)
 
 }
 
 extension NetworkInterface {
     var path: String {
         switch self {
-        case .getWeather(let country):
+        case .getWeather(let city):
             return "/country"
        
         }
