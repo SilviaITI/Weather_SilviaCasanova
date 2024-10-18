@@ -38,6 +38,7 @@
 		61CDE38E2CC25F7B00F40EDB /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE38D2CC25F7B00F40EDB /* Forecast.swift */; };
 		61CDE3902CC2632600F40EDB /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE38F2CC2632600F40EDB /* DetailViewCell.swift */; };
 		61CDE3952CC2876800F40EDB /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE3942CC2876800F40EDB /* SplashView.swift */; };
+		61CDE3972CC2B2E800F40EDB /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CDE3962CC2B2E800F40EDB /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		61CDE38D2CC25F7B00F40EDB /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		61CDE38F2CC2632600F40EDB /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		61CDE3942CC2876800F40EDB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		61CDE3962CC2B2E800F40EDB /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 			children = (
 				6192740D2CC180B5002EF638 /* CustomSearchBar.swift */,
 				61CDE38F2CC2632600F40EDB /* DetailViewCell.swift */,
+				61CDE3962CC2B2E800F40EDB /* LoaderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				619274132CC18193002EF638 /* ShadowContainer.swift in Sources */,
 				61CDE3862CC24F2C00F40EDB /* Weather.swift in Sources */,
 				61CDE38E2CC25F7B00F40EDB /* Forecast.swift in Sources */,
+				61CDE3972CC2B2E800F40EDB /* LoaderView.swift in Sources */,
 				61CDE3902CC2632600F40EDB /* DetailViewCell.swift in Sources */,
 				619273CE2CC159E4002EF638 /* WeatherAppApp.swift in Sources */,
 				61CDE37E2CC24A2A00F40EDB /* NearestArea.swift in Sources */,

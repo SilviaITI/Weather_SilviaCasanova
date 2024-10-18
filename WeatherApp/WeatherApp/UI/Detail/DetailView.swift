@@ -13,14 +13,27 @@ struct DetailView: View {
     let forecast: Forecast?
     
     var body: some View {
-        VStack {
+        VStack(spacing: 24) {
             Text("Aquí tienes tu tiempo en \(area?.areaName.first?.value ?? "Tu área seleccionada")")
+                .font(.largeTitle)
+                .bold()
+                .multilineTextAlignment(.center)
             Text("Weather Details")
                 .font(.title)
-            Text("Temperatura: ")
-            Text("\(weather?.tempC ?? "_")ºC")
-            Text("Humidity: " )
-            Text(weather?.humidity ?? "_")
+            HStack {
+                VStack {
+                    Text("Temperatura: ")
+                    Text("\(weather?.tempC ?? "_")ºC")
+                    Image(.imgHot)
+                        .resizable()
+                        .shadow(radius: 10)
+                        .frame(width: 80, height: 80)
+                }
+                VStack {
+                    Text("Humedad: " )
+                    Text(weather?.humidity ?? "_")
+                }
+            }
         }
         .padding()
         ScrollView(.horizontal, showsIndicators: false) { 
@@ -30,8 +43,9 @@ struct DetailView: View {
                 }
             }
         }
-        Text("¿Qué se espera el dia de hoy?")
+        //Text("¿Qué se espera el dia de hoy?")
         Text(weather?.weatherDesc.first?.value ?? "No hay descripción")
+            .font(.title)
         Text("Vientos de: ")
         Text("\(weather?.windspeedKmph ?? "_")km/h")
     }

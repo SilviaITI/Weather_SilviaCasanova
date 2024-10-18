@@ -23,6 +23,7 @@ final class HomeViewModel: ObservableObject {
     /// Método para traer el listado de todos los personajes y comprueba si existe una página siguiente para mostrarla
     @MainActor
     func fetchWeather() async {
+        isLoading = true
         do {
                let response = try await HomeServices.fetchWeather(city: searchText)
                
@@ -45,7 +46,7 @@ final class HomeViewModel: ObservableObject {
     }
     @MainActor
     func fetchForecast() async {
-        
+        isLoading = true
         do {
             let response = try await HomeServices.fetchForecast(city: searchText)
             forecast = response
@@ -56,6 +57,7 @@ final class HomeViewModel: ObservableObject {
                 showAlert = true
             }
         }
+        isLoading = false
         
     }
 }

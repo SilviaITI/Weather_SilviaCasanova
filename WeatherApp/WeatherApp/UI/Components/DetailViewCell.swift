@@ -16,8 +16,6 @@ struct DetailViewCell: View {
             .frame(width: 200, height: 150)
             .overlay(
                 VStack {
-                    Text("Fecha")
-                        .font(.headline)
                     if let formattedDate = String.dateFormat(originalDateString: forecast.date) {
                         Text(formattedDate)
                             .font(.subheadline)

@@ -12,35 +12,39 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel()
     @State var text = ""
     
-    
-    
     var body: some View {
         NavigationStack {
-        
-                VStack {
-                    Spacer()
+            LoaderView(isLoading: $viewModel.isLoading) {
+                
+                VStack(spacing: 20) {
                     Text("Consulta la previsión del tiempo")
                         .font(.largeTitle)
                         .bold()
+                        .multilineTextAlignment(.center)
+                        .padding()
                     CustomSearchBar(searchText: $viewModel.searchText, isSearchEnable: viewModel.enableSearchButton) {
                         Task {
                             await viewModel.fetchWeather()
                             await viewModel.fetchForecast()
                         }
                     }
-                    Spacer()
                     Image(.umbrella)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 3000, height: 200)
+                        //.frame(height: 300)
                         .shadowContainer(radius: 20.0, borderColor: .mint)
+                        .padding()
                 }
-                .padding()
+                
                 .navigationDestination(isPresented: $viewModel.showDetail){
                     DetailView(weather: viewModel.weatherInfo, area: viewModel.areaInfo, forecast: viewModel.forecast)
                 }
+               
             }
+            
         }
+    }
+        
 }
 #Preview {
     HomeView()
