@@ -25,7 +25,7 @@ extension NetworkInterface {
     var path: String {
         switch self {
         case .getWeather(let city):
-            return "/country"
+            return "/\(city)"
        
         }
     }

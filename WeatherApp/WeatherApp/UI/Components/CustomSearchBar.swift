@@ -18,10 +18,8 @@ struct CustomSearchBar: View {
     // MARK: - Principal View -
     var body: some View {
         HStack {
-            TextField("search.character_textfield".localized, text: $searchText)
+            TextField("Introduce una ciudad...".localized, text: $searchText)
                 .textFieldStyle(CustomRounderedTextFieldStyle())
-                .focused($focusedField)
-            
             Button {
                 action()
             } label: {
@@ -36,7 +34,7 @@ struct CustomSearchBar: View {
             
         }
         .padding()
-        .background(Color.blue)
+        .background(Color.mint.opacity(0.5))
     }
 }
 

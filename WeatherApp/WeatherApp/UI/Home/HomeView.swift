@@ -11,33 +11,37 @@ struct HomeView: View {
     // MARK: - Properties -
     @StateObject var viewModel = HomeViewModel()
     @State var text = ""
-    @State private var selectedWeather: CurrentCondition?
+    
     
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Introduce una ciudad y pulsa la lupa...")
-                    .font(.largeTitle)
+        
+                VStack {
+                    Spacer()
+                    Text("Consulta la previsión del tiempo")
+                        .font(.largeTitle)
+                        .bold()
                     CustomSearchBar(searchText: $viewModel.searchText, isSearchEnable: viewModel.enableSearchButton) {
                         Task {
                             await viewModel.fetchWeather()
+                            await viewModel.fetchForecast()
                         }
-                        if let weather = viewModel.weatherInfo {
-                            selectedWeather = weather
-                            
-                        }
-                        
                     }
+                    Spacer()
+                    Image(.umbrella)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 3000, height: 200)
+                        .shadowContainer(radius: 20.0, borderColor: .mint)
                 }
                 .padding()
                 .navigationDestination(isPresented: $viewModel.showDetail){
-                    DetailView(weather: viewModel.weatherInfo)
+                    DetailView(weather: viewModel.weatherInfo, area: viewModel.areaInfo, forecast: viewModel.forecast)
                 }
             }
         }
-    }
-
+}
 #Preview {
     HomeView()
 }

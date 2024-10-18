@@ -6,23 +6,53 @@
 //
 
 import Foundation
+// MARK: - CurrentCondition
 struct CurrentCondition: Codable {
-    
-    let tempC: String?
-    let humidity: String?
-    let weatherDesc: WeatherDesc?
-    let localObsDateTime: String?
-    let windSpeedKmph: String?
-    
+    let feelsLikeC, feelsLikeF, cloudcover, humidity: String
+    let localObsDateTime, observationTime, precipInches, precipMM: String
+    let pressure, pressureInches, tempC, tempF: String
+    let uvIndex, visibility, visibilityMiles, weatherCode: String
+    let weatherDesc: [WeatherDesc]
+    let winddir16Point, winddirDegree, windspeedKmph, windspeedMiles: String
+
     enum CodingKeys: String, CodingKey {
-          case tempC = "temp_C"            
-          case humidity = "humidity"
-          case weatherDesc = "weatherDesc"
-          case localObsDateTime = "localObsDateTime"
-          case windSpeedKmph = "windspeedKmph"
-      }
+        case feelsLikeC = "FeelsLikeC"
+        case feelsLikeF = "FeelsLikeF"
+        case cloudcover, humidity, localObsDateTime
+        case observationTime = "observation_time"
+        case precipInches, precipMM, pressure, pressureInches
+        case tempC = "temp_C"
+        case tempF = "temp_F"
+        case uvIndex, visibility, visibilityMiles, weatherCode, weatherDesc
+        case winddir16Point, winddirDegree, windspeedKmph, windspeedMiles
+    }
 }
 
-extension CurrentCondition {
-    static let currentTest = CurrentCondition(tempC: "16º", humidity: "80%", weatherDesc: .wethTest, localObsDateTime: "13/06/24", windSpeedKmph: "20km/h")
-}
+
+
+    extension CurrentCondition {
+        static let currentTest = CurrentCondition(
+            feelsLikeC: "5ºC",
+            feelsLikeF: "41ºF",
+            cloudcover: "0",
+            humidity: "80%",
+            localObsDateTime: "2024-10-18 03:42 AM",
+            observationTime: "07:42 AM",
+            precipInches: "0.0",
+            precipMM: "0.0",
+            pressure: "1028",
+            pressureInches: "30",
+            tempC: "10ºC",
+            tempF: "50ºF",
+            uvIndex: "0",
+            visibility: "10",
+            visibilityMiles: "6",
+            weatherCode: "113",
+            weatherDesc: [WeatherDesc.wethTest], 
+            winddir16Point: "NNE",
+            winddirDegree: "12",
+            windspeedKmph: "20km/h",
+            windspeedMiles: "12"
+        )
+    }
+
