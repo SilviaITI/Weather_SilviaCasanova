@@ -9,7 +9,10 @@ import SwiftUI
 
 struct DetailViewCell: View {
     
+    // MARK: - Properties -
     let forecast: ForecastData
+    
+    // MARK: - Principal View -
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
             .fill(Color.mint.opacity(0.5))
@@ -44,7 +47,11 @@ struct DetailViewCell: View {
             )
             .padding()
     }
+    
+    
 }
+
+
 //#Preview {
 //    DetailViewCell()
 //}

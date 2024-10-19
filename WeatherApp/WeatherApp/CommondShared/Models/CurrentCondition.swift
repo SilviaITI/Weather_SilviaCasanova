@@ -14,7 +14,26 @@ struct CurrentCondition: Codable {
     let uvIndex, visibility, visibilityMiles, weatherCode: String
     let weatherDesc: [WeatherDesc]
     let winddir16Point, winddirDegree, windspeedKmph, windspeedMiles: String
-
+    var status: String?
+    
+    var tempImage: TemperatureState {
+           let temperature = Double(tempC) ?? 0.0
+           return getTemperatureState(for: temperature)
+       }
+    
+    func getTemperatureState(for temperature: Double) -> TemperatureState {
+        switch temperature {
+        case ..<8:
+            return .cold
+        case 8...25:
+            return .warm
+        case 25...:
+            return .hot
+        default:
+            return .unknown
+        }
+    }
+    
     enum CodingKeys: String, CodingKey {
         case feelsLikeC = "FeelsLikeC"
         case feelsLikeF = "FeelsLikeF"
@@ -25,6 +44,26 @@ struct CurrentCondition: Codable {
         case tempF = "temp_F"
         case uvIndex, visibility, visibilityMiles, weatherCode, weatherDesc
         case winddir16Point, winddirDegree, windspeedKmph, windspeedMiles
+    }
+    
+    enum TemperatureState: String {
+        case cold
+        case warm
+        case hot
+        case unknown
+      
+        var image: String {
+            switch self {
+            case .cold:
+                return "imgCold"
+            case .warm:
+                return "imgWarm"
+            case .hot:
+                return "imgHot"
+            case .unknown:
+                return "imgUnknown"
+            }
+        }
     }
 }
 

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+@MainActor
 final class HomeViewModel: ObservableObject {
     
     // MARK: - Properties -
@@ -20,20 +22,19 @@ final class HomeViewModel: ObservableObject {
     @Published var forecast: Forecast?
     
     // MARK: - API Methods -
-    /// Método para traer el listado de todos los personajes y comprueba si existe una página siguiente para mostrarla
-    @MainActor
+    /// Method for fetching weather information
     func fetchWeather() async {
         isLoading = true
         do {
-               let response = try await HomeServices.fetchWeather(city: searchText)
-               
-               if let currentCondition = response.currentCondition.first {
-                   weatherInfo = currentCondition
-               }
-
-               if let nearestArea = response.nearestArea.first {
-                   areaInfo = nearestArea
-               }
+            let response = try await HomeServices.fetchWeather(city: searchText)
+            
+            if let currentCondition = response.currentCondition.first {
+                weatherInfo = currentCondition
+            }
+            
+            if let nearestArea = response.nearestArea.first {
+                areaInfo = nearestArea
+            }
             
             showDetail = true
         } catch(let error) {
@@ -44,7 +45,8 @@ final class HomeViewModel: ObservableObject {
         }
         isLoading = false
     }
-    @MainActor
+    
+    /// Method for fetching weather forecast for the next days 
     func fetchForecast() async {
         isLoading = true
         do {

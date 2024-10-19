@@ -11,11 +11,14 @@ import Foundation
 struct NearestArea: Codable {
     let areaName: [AreaName]
     let country: [Country]
-   
+    let latitude: Double?
+    let longitude: Double?
 
     enum CodingKeys: String, CodingKey {
         case areaName = "areaName"
         case country
+        case latitude
+        case longitude
  
     }
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - Enum -
 enum ViewState {
     case splash
     case home
