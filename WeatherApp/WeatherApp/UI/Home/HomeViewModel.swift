@@ -28,11 +28,11 @@ final class HomeViewModel: ObservableObject {
         do {
             let response = try await HomeServices.fetchWeather(city: searchText)
             
-            if let currentCondition = response.currentCondition.first {
+            if let currentCondition = response.currentCondition?.first {
                 weatherInfo = currentCondition
             }
             
-            if let nearestArea = response.nearestArea.first {
+            if let nearestArea = response.nearestArea?.first {
                 areaInfo = nearestArea
             }
             

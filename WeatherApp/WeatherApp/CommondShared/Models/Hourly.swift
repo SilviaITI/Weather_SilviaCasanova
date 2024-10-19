@@ -8,17 +8,17 @@
 import Foundation
 // MARK: - Hourly
 struct Hourly: Codable {
-    let dewPointC, dewPointF, feelsLikeC, feelsLikeF: String
-    let heatIndexC, heatIndexF, windChillC, windChillF: String
-    let windGustKmph, windGustMiles, chanceoffog, chanceoffrost: String
-    let chanceofhightemp, chanceofovercast, chanceofrain, chanceofremdry: String
-    let chanceofsnow, chanceofsunshine, chanceofthunder, chanceofwindy: String
-    let cloudcover, diffRAD, humidity, precipInches: String
-    let precipMM, pressure, pressureInches, shortRAD: String
-    let tempC, tempF, time, uvIndex: String
-    let visibility, visibilityMiles, weatherCode: String
-    let weatherDesc, weatherIconURL: [WeatherDesc]
-    let winddir16Point, winddirDegree, windspeedKmph, windspeedMiles: String
+    let dewPointC, dewPointF, feelsLikeC, feelsLikeF: String?
+    let heatIndexC, heatIndexF, windChillC, windChillF: String?
+    let windGustKmph, windGustMiles, chanceoffog, chanceoffrost: String?
+    let chanceofhightemp, chanceofovercast, chanceofrain, chanceofremdry: String?
+    let chanceofsnow, chanceofsunshine, chanceofthunder, chanceofwindy: String?
+    let cloudcover, diffRAD, humidity, precipInches: String?
+    let precipMM, pressure, pressureInches, shortRAD: String?
+    let tempC, tempF, time, uvIndex: String?
+    let visibility, visibilityMiles, weatherCode: String?
+    let weatherDesc, weatherIconURL: [WeatherDesc]?
+    let winddir16Point, winddirDegree, windspeedKmph, windspeedMiles: String?
 
     enum CodingKeys: String, CodingKey {
         case dewPointC = "DewPointC"

@@ -8,16 +8,16 @@
 import Foundation
 // MARK: - CurrentCondition
 struct CurrentCondition: Codable {
-    let feelsLikeC, feelsLikeF, cloudcover, humidity: String
-    let localObsDateTime, observationTime, precipInches, precipMM: String
-    let pressure, pressureInches, tempC, tempF: String
-    let uvIndex, visibility, visibilityMiles, weatherCode: String
-    let weatherDesc: [WeatherDesc]
-    let winddir16Point, winddirDegree, windspeedKmph, windspeedMiles: String
+    let feelsLikeC, feelsLikeF, cloudcover, humidity: String?
+    let localObsDateTime, observationTime, precipInches, precipMM: String?
+    let pressure, pressureInches, tempC, tempF: String?
+    let uvIndex, visibility, visibilityMiles, weatherCode: String?
+    let weatherDesc: [WeatherDesc]?
+    let winddir16Point, winddirDegree, windspeedKmph, windspeedMiles: String?
     var status: String?
     
     var tempImage: TemperatureState {
-           let temperature = Double(tempC) ?? 0.0
+        let temperature = Double(tempC ?? "") ?? 0.0
            return getTemperatureState(for: temperature)
        }
     

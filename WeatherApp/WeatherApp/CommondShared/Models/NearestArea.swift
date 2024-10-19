@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - NearestArea
 struct NearestArea: Codable {
-    let areaName: [AreaName]
-    let country: [Country]
+    let areaName: [AreaName]?
+    let country: [Country]?
     let latitude: String?
     let longitude: String?
     

@@ -8,8 +8,8 @@
 import Foundation
 // MARK: - Astronomy
 struct Astronomy: Codable {
-    let moonIllumination, moonPhase, moonrise, moonset: String
-    let sunrise, sunset: String
+    let moonIllumination, moonPhase, moonrise, moonset: String?
+    let sunrise, sunset: String?
 
     enum CodingKeys: String, CodingKey {
         case moonIllumination = "moon_illumination"

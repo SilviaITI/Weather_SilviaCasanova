@@ -7,10 +7,10 @@
 
 import Foundation
 struct WeatherResponse: Codable {
-    let currentCondition: [CurrentCondition]
-    let nearestArea: [NearestArea]
-    let request: [RequestModel]
-    let weather: [Weather]
+    let currentCondition: [CurrentCondition]?
+    let nearestArea: [NearestArea]?
+    let request: [RequestModel]?
+    let weather: [Weather]?
     
     enum CodingKeys: String, CodingKey {
         case currentCondition = "current_condition"

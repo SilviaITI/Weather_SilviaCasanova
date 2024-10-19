@@ -4,9 +4,6 @@
     "%@%%" : {
 
     },
-    "%@km/h" : {
-
-    },
     "%@ºC" : {
 
     },
@@ -136,7 +133,7 @@
     "Temperatura: " : {
 
     },
-    "Vientos de: " : {
+    "Vientos de: %@" : {
 
     },
     "Weather App" : {

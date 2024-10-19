@@ -7,10 +7,10 @@
 
 import Foundation
 struct WeatherInfo: Codable {
-    let astronomy: [Astronomy]
-    let avgtempC: Int
-    let avgtempF: Int
-    let date: String
+    let astronomy: [Astronomy]?
+    let avgtempC: Int?
+    let avgtempF: Int?
+    let date: String?
     
 
     enum CodingKeys: String, CodingKey {

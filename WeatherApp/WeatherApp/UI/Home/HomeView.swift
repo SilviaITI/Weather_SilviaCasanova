@@ -18,13 +18,7 @@ struct HomeView: View {
                     
                     simpleAlertContent
                     
-                    Text("Consulta la previsión del tiempo")
-                        .font(.largeTitle)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    Text("Introduce la ciudad que quieras consultar y pulsa la lupa")
-                        .multilineTextAlignment(.center)
+                    titleDescrioption
                     
                     CustomSearchBar(searchText: $viewModel.searchText, isSearchEnable: viewModel.enableSearchButton) {
                         viewModel.fetchWeatherData()
@@ -33,7 +27,7 @@ struct HomeView: View {
                     Image(.umbrella)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 200, height: 200)
+                        .frame(width: 250, height: 200)
                         .shadowContainer(radius: 20.0, borderColor: .mint)
                         .padding()
                 }
@@ -58,6 +52,19 @@ struct HomeView: View {
                     dismissButton: .default(Text("aceptar".localized))
                 )
             }
+    }
+    
+    private var titleDescrioption: some View {
+        VStack {
+            Text("Consulta la previsión del tiempo")
+                .font(.largeTitle)
+                .bold()
+                .multilineTextAlignment(.center)
+                .padding()
+            Text("Introduce la ciudad que quieras consultar y pulsa la lupa")
+                .multilineTextAlignment(.center)
+                .padding()
+        }
     }
 }
 

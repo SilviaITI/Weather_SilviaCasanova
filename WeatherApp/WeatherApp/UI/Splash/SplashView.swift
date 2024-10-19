@@ -45,6 +45,9 @@ struct SplashView: View {
                 .opacity(0.2)
                 .ignoresSafeArea()
                 .padding()
+                .scaleEffect(isAnimating ? 1.0 : 0.1)
+                .animation(.easeInOut(duration: 3), value: isAnimating)
+                .padding(.horizontal, 40)
                 .onAppear(perform: startAnimation)
         }
     }

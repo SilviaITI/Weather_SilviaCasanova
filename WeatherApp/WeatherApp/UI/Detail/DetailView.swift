@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct DetailView: View {
     
@@ -13,33 +14,29 @@ struct DetailView: View {
     let weather: CurrentCondition?
     let area: NearestArea?
     let forecast: Forecast?
+    @State private var region = MKCoordinateRegion(
+          center: CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0),
+          span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+      )
     
     // MARK: - Principal View -
     var body: some View {
-        weatherInfo
-        Text("Previsión para los próximos días")
-            .font(.title)
-            .bold()
-            .multilineTextAlignment(.center)
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                ForEach(forecast?.forecastData ?? [], id: \.date) { data in
-                    DetailViewCell(forecast: data)
-                }
-            }
+        ScrollView {
+            weatherInfo
+            
+            forecastInfo
+          
+            weatherDesc
+            
         }
-        Text(weather?.weatherDesc.first?.value ?? "No hay descripción")
-            .font(.title)
-        Text("Vientos de: ")
-        Text("\(weather?.windspeedKmph ?? "_")km/h")
     }
     
     @ViewBuilder
     private var weatherInfo: some View {
         VStack(spacing: 24) {
-            Text("Aquí tienes tu tiempo en \(area?.areaName.first?.value ?? "Tu área seleccionada")")
-                .font(.largeTitle)
-                .bold()
+            Text("Aquí tienes tu tiempo en \(area?.areaName?.first?.value ?? "Tu área seleccionada")")
+                .font(.title)
+                .padding()
                 .multilineTextAlignment(.center)
             HStack {
                 VStack {
@@ -63,8 +60,47 @@ struct DetailView: View {
         }
         .padding()
     }
+    
+    private var forecastInfo: some View {
+        VStack {
+            Text("Previsión para los próximos días")
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .padding()
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(forecast?.forecastData ?? [], id: \.date) { data in
+                        DetailViewCell(forecast: data)
+                    }
+                }
+            }
+        }
+    }
+    
+    private var weatherDesc: some View {
+        HStack {
+            VStack {
+                Text(weather?.weatherDesc?.first?.value ?? "No hay descripción")
+                    .font(.title)
+                Text("Vientos de: \(weather?.windspeedKmph ?? "")")
+                Map(coordinateRegion: $region)
+                    .onAppear {
+                        let lat = Double(area?.latitude ?? "") ?? 0.0
+                        let lon = Double(area?.longitude ?? "") ?? 0.0
+                        
+                        region = MKCoordinateRegion(
+                            center: CLLocationCoordinate2D(latitude: lat, longitude: lon),
+                            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                        )
+                    }
+                    .frame(height: 200)
+                    .disabled(true)
+            }
+        }
+    }
+    
 }
 
-#Preview {
-    DetailView(weather: .currentTest, area: .nearestTest, forecast: .forecastTest)
-}
+//#Preview {
+//    DetailView(weather: .currentTest, area: .nearestTest, forecast: .forecastTest)
+//}
