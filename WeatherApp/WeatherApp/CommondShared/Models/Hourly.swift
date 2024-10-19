@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// MARK: - Hourly
+
 struct Hourly: Codable {
     let dewPointC, dewPointF, feelsLikeC, feelsLikeF: String?
     let heatIndexC, heatIndexF, windChillC, windChillF: String?

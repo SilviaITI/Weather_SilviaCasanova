@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// MARK: - Weather
+
 struct Weather: Codable {
     let astronomy: [Astronomy]?
     let avgtempC, avgtempF, date: String?

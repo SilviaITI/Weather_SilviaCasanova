@@ -6,7 +6,8 @@
 //
 
 import Foundation
-// MARK: - CurrentCondition
+
+
 struct CurrentCondition: Codable {
     let feelsLikeC, feelsLikeF, cloudcover, humidity: String?
     let localObsDateTime, observationTime, precipInches, precipMM: String?

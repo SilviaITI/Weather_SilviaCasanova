@@ -9,22 +9,13 @@ import Foundation
 
 
 struct HomeServices {
-    /// Método que hará la llamada la networkInterface para obtener la lista de los personjes con paginado
-    /// - Returns: Objeto ApiResponse que contiene un objeto Info para el paginado y un objeto Results que es un array de personajes
+    /// Method that calls networkinterface to get the weather forecast  paginado
+    /// - Returns: WeatherResponse object that contains an object with meteorological information
     static func fetchWeather(city: String) async throws -> WeatherResponse {
         
         try await NetworkInterface.getWeather(city: city).response()
         
         
-    }
-    
-    static func fetchForecast(city: String) async throws -> Forecast {
-        let weatherResponse: WeatherResponse = try await NetworkInterface.getWeather(city: city).response()
-        let forecastData = weatherResponse.weather?.compactMap { weather in
-         
-            ForecastData(date: weather.date, maxTemp: weather.maxtempC, minTemp: weather.mintempC)
-        }
-        return Forecast(forecastData: forecastData)
     }
 }
 

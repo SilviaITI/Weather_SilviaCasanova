@@ -18,7 +18,7 @@ struct CustomSearchBar: View {
     // MARK: - Principal View -
     var body: some View {
         HStack {
-            TextField("Introduce una ciudad...".localized, text: $searchText)
+            TextField("custom_search_placeholder".localized, text: $searchText)
                 .textFieldStyle(CustomRounderedTextFieldStyle())
             Button {
                 action()

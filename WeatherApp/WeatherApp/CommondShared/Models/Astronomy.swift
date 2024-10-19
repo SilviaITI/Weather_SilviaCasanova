@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// MARK: - Astronomy
+
 struct Astronomy: Codable {
     let moonIllumination, moonPhase, moonrise, moonset: String?
     let sunrise, sunset: String?

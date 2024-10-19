@@ -35,7 +35,7 @@ struct SplashView: View {
     @ViewBuilder
     private var splashContent: some View {
         ZStack {
-            Text("Weather App")
+            Text("splash_title".localized)
                 .font(.largeTitle)
                 .bold()
                 .foregroundStyle(Color.mint)

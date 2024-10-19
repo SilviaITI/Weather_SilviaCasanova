@@ -7,18 +7,205 @@
     "%@ºC" : {
 
     },
-    "Aquí tienes tu tiempo en %@" : {
-
+    "action_accept" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accept"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "aceptar"
+          }
+        }
+      }
     },
-    "Consulta la previsión del tiempo" : {
-
+    "custom_search_placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write your city"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Introduce tu ciudad..."
+          }
+        }
+      }
+    },
+    "detail_cell_max" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Max"
+          }
+        }
+      }
+    },
+    "detail_cell_min" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Min"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Min"
+          }
+        }
+      }
+    },
+    "detail_default_area" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your selected area"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tu área seleccionada"
+          }
+        }
+      }
+    },
+    "detail_humidity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Humidity: "
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Humedad: "
+          }
+        }
+      }
+    },
+    "detail_no_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no description"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No hay descripción"
+          }
+        }
+      }
+    },
+    "detail_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forecast for the upcoming days"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Previsión para los próximos días"
+          }
+        }
+      }
+    },
+    "detail_temperature" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperature: "
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Temperatura: "
+          }
+        }
+      }
+    },
+    "detail_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Here is your weather in %@."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Aquí tienes tu tiempo en %@"
+          }
+        }
+      }
+    },
+    "detail_wind" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wind"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Vientos de: %@ km/h"
+          }
+        }
+      }
     },
     "error" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Error"
           }
         }
@@ -27,9 +214,15 @@
     "error_general" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "General error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Error general"
           }
         }
@@ -38,9 +231,15 @@
     "error_http" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "HTTP error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Error en la conexión HTTP"
           }
         }
@@ -49,9 +248,15 @@
     "error_invalid_dataerror_invalid_data" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Invalid data error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Datos no válidos"
           }
         }
@@ -60,9 +265,15 @@
     "error_json" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "JSON error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Error en mapeo de json"
           }
         }
@@ -71,9 +282,15 @@
     "error_message_default" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "An error has occurred"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Ha ocurrido un error"
           }
         }
@@ -82,9 +299,15 @@
     "error_no_data" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "No data "
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "No se han podido descargar los datos"
           }
         }
@@ -93,9 +316,15 @@
     "error_status" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Error status"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Error status"
           }
         }
@@ -104,40 +333,76 @@
     "home_search_textfield" : {
       "extractionState" : "manual",
       "localizations" : {
-        "es" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Write your city"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Introduce una ciudad"
           }
         }
       }
     },
-    "Humedad: " : {
-
+    "home_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check the weather forecast"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Introduce la ciudad que quieras consultar y pulsa la lupa"
+          }
+        }
+      }
     },
-    "Introduce la ciudad que quieras consultar y pulsa la lupa" : {
-
+    "home_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "enter the city you want to consult and press the magnifying glass"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Consulta la previsión del tiempo"
+          }
+        }
+      }
     },
     "Key" : {
       "extractionState" : "manual"
     },
-    "Max" : {
-
+    "Key 1" : {
+      "extractionState" : "manual"
     },
-    "Min" : {
-
-    },
-    "Previsión para los próximos días" : {
-
-    },
-    "Temperatura: " : {
-
-    },
-    "Vientos de: %@" : {
-
-    },
-    "Weather App" : {
-
+    "splash_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weather App"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Weather App"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

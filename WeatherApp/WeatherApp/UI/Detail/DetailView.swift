@@ -34,13 +34,13 @@ struct DetailView: View {
     @ViewBuilder
     private var weatherInfo: some View {
         VStack(spacing: 24) {
-            Text("Aquí tienes tu tiempo en \(area?.areaName?.first?.value ?? "Tu área seleccionada")")
+            Text(String(format: "detail_title".localized, area?.areaName?.first?.value ?? "detail_default_area".localized))
                 .font(.title)
                 .padding()
                 .multilineTextAlignment(.center)
             HStack {
                 VStack {
-                    Text("Temperatura: ")
+                    Text("detail_temperature".localized)
                     Image(weather?.tempImage.image ?? "imgWarm")
                         .resizable()
                         .shadow(radius: 10)
@@ -49,7 +49,7 @@ struct DetailView: View {
                 }
                 
                 VStack {
-                    Text("Humedad: " )
+                    Text("detail_humidity".localized )
                     Image(.imgHumidity)
                         .resizable()
                         .shadow(radius: 10)
@@ -63,7 +63,7 @@ struct DetailView: View {
     
     private var forecastInfo: some View {
         VStack {
-            Text("Previsión para los próximos días")
+            Text("detail_subtitle".localized)
                 .font(.title)
                 .multilineTextAlignment(.center)
                 .padding()
@@ -80,16 +80,14 @@ struct DetailView: View {
     private var weatherDesc: some View {
         HStack {
             VStack {
-                Text(weather?.weatherDesc?.first?.value ?? "No hay descripción")
+                Text(weather?.weatherDesc?.first?.value ?? "detail_no_description".localized)
                     .font(.title)
-                Text("Vientos de: \(weather?.windspeedKmph ?? "")")
+                Text(String(format: "detail_wind".localized, weather?.windspeedKmph ?? ""))
                 Map(coordinateRegion: $region)
                     .onAppear {
-                        let lat = Double(area?.latitude ?? "") ?? 0.0
-                        let lon = Double(area?.longitude ?? "") ?? 0.0
-                        
                         region = MKCoordinateRegion(
-                            center: CLLocationCoordinate2D(latitude: lat, longitude: lon),
+                            center: CLLocationCoordinate2D(latitude: Double(area?.latitude ?? "") ?? 0.0,
+                                                           longitude: Double(area?.longitude ?? "") ?? 0.0),
                             span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                         )
                     }
@@ -98,9 +96,8 @@ struct DetailView: View {
             }
         }
     }
-    
 }
 
-//#Preview {
-//    DetailView(weather: .currentTest, area: .nearestTest, forecast: .forecastTest)
-//}
+#Preview {
+    DetailView(weather: .currentTest, area: .nearestTest, forecast: .forecastTest)
+}

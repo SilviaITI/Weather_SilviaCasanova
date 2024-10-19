@@ -18,7 +18,7 @@ struct HomeView: View {
                     
                     simpleAlertContent
                     
-                    titleDescrioption
+                    titleDescription
                     
                     CustomSearchBar(searchText: $viewModel.searchText, isSearchEnable: viewModel.enableSearchButton) {
                         viewModel.fetchWeatherData()
@@ -33,7 +33,9 @@ struct HomeView: View {
                 }
                 
                 .navigationDestination(isPresented: $viewModel.showDetail) {
-                    DetailView(weather: viewModel.weatherInfo, area: viewModel.areaInfo, forecast: viewModel.forecast)
+                    DetailView(weather: viewModel.weatherInfo,
+                               area: viewModel.areaInfo,
+                               forecast: viewModel.forecast)
                 }
             }
         }
@@ -49,19 +51,19 @@ struct HomeView: View {
                 Alert(
                     title: Text("error".localized),
                     message: Text(viewModel.alertText),
-                    dismissButton: .default(Text("aceptar".localized))
+                    dismissButton: .default(Text("action_accept".localized))
                 )
             }
     }
     
-    private var titleDescrioption: some View {
+    private var titleDescription: some View {
         VStack {
-            Text("Consulta la previsión del tiempo")
+            Text("home_title".localized)
                 .font(.largeTitle)
                 .bold()
                 .multilineTextAlignment(.center)
                 .padding()
-            Text("Introduce la ciudad que quieras consultar y pulsa la lupa")
+            Text("home_subtitle".localized)
                 .multilineTextAlignment(.center)
                 .padding()
         }

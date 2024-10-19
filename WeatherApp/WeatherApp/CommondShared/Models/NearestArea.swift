@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - NearestArea
+
 struct NearestArea: Codable {
     let areaName: [AreaName]?
     let country: [Country]?
@@ -24,7 +24,7 @@ struct NearestArea: Codable {
     }
 }
 
-// MARK: - AreaName -
+
 struct AreaName: Codable {
     let value: String?
 }
@@ -32,7 +32,7 @@ struct Country: Codable {
     let value: String?
 }
 
-// MARK: - Extension -
+
 extension NearestArea {
     static let nearestTest = NearestArea(
         areaName: [AreaName(value: "París")],

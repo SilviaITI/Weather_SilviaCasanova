@@ -14,12 +14,12 @@ extension String {
         NSLocalizedString(self, comment: "")
     }
     
-   static func dateFormat(originalDateString: String) -> String? {
+     var dateFormat: String? {
         let dateFormatter = DateFormatter()
         
           dateFormatter.dateFormat = "yyyy-MM-dd"
           
-          guard let date = dateFormatter.date(from: originalDateString) else {
+          guard let date = dateFormatter.date(from: self) else {
               print("Error: No se pudo convertir la fecha.")
               return nil
           }

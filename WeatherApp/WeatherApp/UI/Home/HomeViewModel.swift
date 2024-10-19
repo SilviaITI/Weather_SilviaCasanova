@@ -21,20 +21,38 @@ final class HomeViewModel: ObservableObject {
     @Published var showDetail = false
     @Published var forecast: Forecast?
     
+    // MARK: - Public Methods -
+    /// Method that calls other methods to avoid publishing changes during view updates.
+    func fetchWeatherData() {
+        Task {
+            await fetchWeather()
+        }
+    }
+    // MARK: - Private Methods -
+    private func loadData(_ data: WeatherResponse) {
+        if let currentCondition = data.currentCondition?.first {
+            weatherInfo = currentCondition
+        }
+        
+        if let nearestArea = data.nearestArea?.first {
+            areaInfo = nearestArea
+        }
+        
+        let forecastData = data.weather?.compactMap { weather in
+            ForecastData(date: weather.date, maxTemp: weather.maxtempC, minTemp: weather.mintempC)
+        }
+        
+        forecast = Forecast(forecastData: forecastData)
+    }
+    
     // MARK: - API Methods -
     /// Method for fetching weather information
-    func fetchWeather() async {
+    private func fetchWeather() async {
         isLoading = true
         do {
             let response = try await HomeServices.fetchWeather(city: searchText)
             
-            if let currentCondition = response.currentCondition?.first {
-                weatherInfo = currentCondition
-            }
-            
-            if let nearestArea = response.nearestArea?.first {
-                areaInfo = nearestArea
-            }
+            loadData(response)
             
             showDetail = true
         } catch(let error) {
@@ -44,30 +62,5 @@ final class HomeViewModel: ObservableObject {
             }
         }
         isLoading = false
-    }
-    
-    /// Method for fetching weather forecast for the next days 
-    func fetchForecast() async {
-        isLoading = true
-        do {
-            let response = try await HomeServices.fetchForecast(city: searchText)
-            forecast = response
-            showDetail = true
-        } catch {
-            if let apiError = error as? APIErrors {
-                alertText = apiError.description
-                showAlert = true
-            }
-        }
-        isLoading = false
-        
-    }
-    
-    /// Method that calls other methods to avoid publishing changes during view updates.
-    func fetchWeatherData() {
-        Task {
-            await fetchWeather()
-            await fetchForecast()
-        }
     }
 }

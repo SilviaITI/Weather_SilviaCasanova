@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import Foundation
-// MARK: - Request
+
 struct RequestModel: Codable {
     let query, type: String?
 }
