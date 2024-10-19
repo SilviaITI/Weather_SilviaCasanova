@@ -7,7 +7,7 @@
 
 import Foundation
 
-@MainActor
+
 final class HomeViewModel: ObservableObject {
     
     // MARK: - Properties -
@@ -47,6 +47,7 @@ final class HomeViewModel: ObservableObject {
     
     // MARK: - API Methods -
     /// Method for fetching weather information
+     @MainActor
     private func fetchWeather() async {
         isLoading = true
         do {
