@@ -16,9 +16,11 @@ struct MonumentsView: View {
 
     var body: some View {
         VStack{
-            Map(coordinateRegion: $region)
-                .edgesIgnoringSafeArea(.all)
-
+           
+                Map(coordinateRegion: $region)
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: 300, height: 200)
+            
         }
     }
 }

@@ -65,6 +65,6 @@ struct DetailView: View {
     }
 }
 
-//#Preview {
-//    DetailView(weather: .currentTest, forecast: <#Forecast?#>)
-//}
+#Preview {
+    DetailView(weather: .currentTest, area: .nearestTest, forecast: .forecastTest)
+}

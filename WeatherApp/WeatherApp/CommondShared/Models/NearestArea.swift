@@ -11,8 +11,9 @@ import Foundation
 struct NearestArea: Codable {
     let areaName: [AreaName]
     let country: [Country]
-    let latitude: Double?
-    let longitude: Double?
+    let latitude: String?
+    let longitude: String?
+    
 
     enum CodingKeys: String, CodingKey {
         case areaName = "areaName"
@@ -23,12 +24,22 @@ struct NearestArea: Codable {
     }
 }
 
-// MARK: - AreaName
+// MARK: - AreaName -
 struct AreaName: Codable {
     let value: String?
 }
 struct Country: Codable {
     let value: String?
+}
+
+// MARK: - Extension -
+extension NearestArea {
+    static let nearestTest = NearestArea(
+        areaName: [AreaName(value: "París")],
+        country: [Country(value: "Francia")],
+        latitude: "2.6",
+        longitude: "3.7"
+    )
 }
 
 

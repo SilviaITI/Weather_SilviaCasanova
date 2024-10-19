@@ -62,4 +62,12 @@ final class HomeViewModel: ObservableObject {
         isLoading = false
         
     }
+    
+    /// Method that calls other methods to avoid publishing changes during view updates.
+    func fetchWeatherData() {
+        Task {
+            await fetchWeather()
+            await fetchForecast()
+        }
+    }
 }

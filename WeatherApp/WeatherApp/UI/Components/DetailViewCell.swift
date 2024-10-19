@@ -19,24 +19,24 @@ struct DetailViewCell: View {
             .frame(width: 200, height: 150)
             .overlay(
                 VStack {
-                    if let formattedDate = String.dateFormat(originalDateString: forecast.date) {
+                    if let formattedDate = String.dateFormat(originalDateString: forecast.date ?? "") {
                         Text(formattedDate)
                             .font(.subheadline)
                     } else {
-                        Text(forecast.date)
+                        Text(forecast.date ?? "")
                             .font(.subheadline)
                     }
                     HStack {
                         VStack {
                             Text("Max")
-                            Text("\(forecast.maxTemp)ºC")
+                            Text("\(forecast.maxTemp ?? "")ºC")
                                 .font(.title)
                         }
                         .frame(maxWidth: .infinity)
                         
                         VStack {
                             Text("Min")
-                            Text("\(forecast.minTemp)ºC")
+                            Text("\(forecast.minTemp ?? "")ºC")
                                 .font(.title)
                         }
                         .frame(maxWidth: .infinity)
@@ -52,6 +52,6 @@ struct DetailViewCell: View {
 }
 
 
-//#Preview {
-//    DetailViewCell()
-//}
+#Preview {
+    DetailViewCell(forecast: Forecast.forecastDataTest)
+}

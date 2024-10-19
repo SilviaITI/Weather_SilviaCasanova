@@ -1,0 +1,147 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@%%" : {
+
+    },
+    "%@km/h" : {
+
+    },
+    "%@ºC" : {
+
+    },
+    "Aquí tienes tu tiempo en %@" : {
+
+    },
+    "Consulta la previsión del tiempo" : {
+
+    },
+    "error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        }
+      }
+    },
+    "error_general" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error general"
+          }
+        }
+      }
+    },
+    "error_http" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error en la conexión HTTP"
+          }
+        }
+      }
+    },
+    "error_invalid_dataerror_invalid_data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos no válidos"
+          }
+        }
+      }
+    },
+    "error_json" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error en mapeo de json"
+          }
+        }
+      }
+    },
+    "error_message_default" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha ocurrido un error"
+          }
+        }
+      }
+    },
+    "error_no_data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se han podido descargar los datos"
+          }
+        }
+      }
+    },
+    "error_status" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error status"
+          }
+        }
+      }
+    },
+    "home_search_textfield" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduce una ciudad"
+          }
+        }
+      }
+    },
+    "Humedad: " : {
+
+    },
+    "Introduce la ciudad que quieras consultar y pulsa la lupa" : {
+
+    },
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "Max" : {
+
+    },
+    "Min" : {
+
+    },
+    "Previsión para los próximos días" : {
+
+    },
+    "Temperatura: " : {
+
+    },
+    "Vientos de: " : {
+
+    },
+    "Weather App" : {
+
+    }
+  },
+  "version" : "1.0"
+}

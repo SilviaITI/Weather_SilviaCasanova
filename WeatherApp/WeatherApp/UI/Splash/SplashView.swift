@@ -34,14 +34,19 @@ struct SplashView: View {
     // MARK: - View Components -
     @ViewBuilder
     private var splashContent: some View {
-        
-        Image(.umbrellaSplash)
-            .resizable()
-            .scaledToFill()
-            .scaleEffect(isAnimating ? 1.0 : 0.1)
-            .animation(.easeInOut(duration: 3), value: isAnimating)
-            .padding()
-            .onAppear(perform: startAnimation)
+        ZStack {
+            Text("Weather App")
+                .font(.largeTitle)
+                .bold()
+                .foregroundStyle(Color.mint)
+            Image(.imgSplash)
+                .resizable()
+                .scaledToFill()
+                .opacity(0.2)
+                .ignoresSafeArea()
+                .padding()
+                .onAppear(perform: startAnimation)
+        }
     }
 }
 
